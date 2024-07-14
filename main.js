@@ -21,18 +21,14 @@ document.addEventListener('DOMContentLoaded', function(){
             linkElement.href = json.html_url;
         })
         
-        fetch('https://api.github.com/users/MarceloBenites1985/followers')
-        .then(res => res.json())
-        .then(followers => {
-            followersElement.innerText = followers.length;
-        });
 
         fetch('https://api.github.com/users/MarceloBenites1985/followers')
         .then(res => res.json())
         .then(following => {
             followingElement.innerText = following.length;
-        });
-})
-.catch(function(error) {
-    console.log('Ocorreu um erro:', error);
+        })
+        .catch(function(error) {
+            console.log('Ocorreu um erro:', error);
+        })
 });
+
